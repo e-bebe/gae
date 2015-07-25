@@ -1,4 +1,8 @@
+from django.views.generic import TemplateView
 from django import http
 
-def home(request):
-    return http.HttpResponse('Hello World!')
+
+class YokkoraView(TemplateView):
+    template_name = 'hello/yokkora.html'
+
+yokkora = YokkoraView.as_view()

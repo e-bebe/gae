@@ -1,5 +1,12 @@
 # Django settings for apps project.
 
+""" Setting for Django."""
+
+import os
+import sys
+
+ROOT_PATH = os.path.dirname(__file__)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -108,11 +115,14 @@ ROOT_URLCONF = 'apps.django_urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'apps.wsgi.application'
 
+"""
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
+"""
+TEMPLATE_DIRS = (os.path.join(ROOT_PATH, 'templates'))
 
 INSTALLED_APPS = (
     'apps.hello',
