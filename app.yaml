@@ -8,6 +8,15 @@ handlers:
 - url: .*
   script: apps.wsgi.application
 
+# adminだけは別のとこにとばしたい
+- url: /admin.*
+  script: apps.wsgi.application
+  secure: always
+
+# - url: .*
+#   static_files: webapp/hoge.html
+#   upload: webapp/hoge.html
+
 libraries:
 - name: django
   version: 1.5
